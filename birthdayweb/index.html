@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 21st Birthday Niña Danica Verdejo 💙</title>
+  <meta name="description" content="A special birthday celebration for Niña Danica Verdejo" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+          keyframes: {
+            fadeUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }},
+            float: { '0%': { transform: 'translateY(100vh)', opacity: '0' }, '10%': { opacity: '0.6' }, '90%': { opacity: '0.6' }, '100%': { transform: 'translateY(-100vh)', opacity: '0' }},
+            shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' }},
+            confetti: { '0%': { transform: 'translateY(-10vh) rotate(0deg)', opacity: 1 }, '100%': { transform: 'translateY(110vh) rotate(360deg)', opacity: 0 }},
+            pulseBtn: { '0%,100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.05)' }},
+            fireworks: { '0%': { opacity: 1, transform: 'scale(0)' }, '50%': { opacity: 1, transform: 'scale(1.5)' }, '100%': { opacity: 0, transform: 'scale(0)' }},
+            glow: { '0%,100%': { boxShadow: '0 0 15px #60a5fa' }, '50%': { boxShadow: '0 0 25px #3b82f6' } }
+          },
+          animation: {
+            fadeUp: 'fadeUp 1s ease-out forwards',
+            float: 'float linear infinite',
+            shimmer: 'shimmer 3s linear infinite',
+            confetti: 'confetti linear infinite',
+            pulseBtn: 'pulseBtn 2s ease-in-out infinite',
+            fireworks: 'fireworks 0.6s ease-out forwards',
+            glow: 'glow 2s ease-in-out infinite'
+          },
+          colors: {
+            lightblue: '#e0f2fe',
+            blue1: '#3b82f6',
+            blue2: '#60a5fa',
+            darkblue: '#1e3a8a'
+          }
+        },
+      },
+    }
+  </script>
+
+  <style>
+    .shimmer-text {
+      background: linear-gradient(90deg, #fff, #60a5fa, #fff);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: shimmer 3s linear infinite;
+    }
+    html { scroll-behavior: smooth; }
+
+    /* Glow for hero buttons & gallery hover */
+    .hover-glow:hover {
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    /* Slideshow styles */
+    .slideshow-wrapper {
+      overflow-x: hidden;
+      width: 100%;
+      height: 180px;
+      position: relative;
+    }
+    .slideshow-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 30s linear infinite;
+    }
+    .slideshow-track img {
+      width: 300px;
+      height: 180px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+
+<body class="bg-lightblue text-blue-900 font-sans overflow-x-hidden relative">
+
+
+
+
+  <!-- Floating Hearts -->
+  <div id="hearts" class="fixed inset-0 pointer-events-none -z-10"></div>
+  <!-- Confetti -->
+  <div id="confetti" class="fixed inset-0 pointer-events-none -z-20"></div>
+  <!-- Fireworks -->
+  <div id="fireworks" class="fixed inset-0 pointer-events-none -z-30"></div>
+<!-- Navigation -->
+<nav class="fixed w-full bg-white/50 backdrop-blur-lg shadow z-50 font-display text-blue-700">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+    <!-- Logo / Brand -->
+    <div class="text-xl font-bold"> My Love</div>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex space-x-6 text-lg">
+      <a href="#home" class="hover:text-blue-500 transition hover:scale-110">Home</a>
+      <a href="#gallery" class="hover:text-blue-500 transition hover:scale-110">Gallery</a>
+      <a href="#video" class="hover:text-blue-500 transition hover:scale-110">Video Memories</a>
+      <a href="#letter" class="hover:text-blue-500 transition hover:scale-110">Love Letter</a>
+      <a href="#wishes" class="hover:text-blue-500 transition hover:scale-110">Wishes</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menuButton" class="focus:outline-none">
+        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white/80 backdrop-blur-lg px-4 py-4 space-y-3">
+    <a href="#home" class="block hover:text-blue-500 transition">Home</a>
+    <a href="#gallery" class="block hover:text-blue-500 transition">Gallery</a>
+    <a href="#video" class="block hover:text-blue-500 transition">Video Memories</a>
+    <a href="#letter" class="block hover:text-blue-500 transition">Love Letter</a>
+    <a href="#wishes" class="block hover:text-blue-500 transition">Wishes</a>
+  </div>
+</nav>
+
+<!-- JS for mobile toggle -->
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+<!-- Hero Page -->
+<section id="home" class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+  <!-- Background Gradient -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue2 via-blue1 to-blue2 -z-20"></div>
+
+  <!-- Bokeh Canvas -->
+  <canvas id="bokehCanvas" class="absolute inset-0 w-full h-full"></canvas>
+
+  <!-- Floating Stars / Sparkles -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute w-2 h-2 bg-white rounded-full animate-pulseStar" style="top:10%; left:20%; animation-delay:0s;"></div>
+    <div class="absolute w-3 h-3 bg-white rounded-full animate-pulseStar" style="top:30%; left:80%; animation-delay:1s;"></div>
+    <div class="absolute w-2 h-2 bg-white rounded-full animate-pulseStar" style="top:60%; left:50%; animation-delay:2s;"></div>
+    <div class="absolute w-2 h-2 bg-white rounded-full animate-pulseStar" style="top:75%; left:30%; animation-delay:3s;"></div>
+  </div>
+
+  <!-- Hero Text -->
+  <h1 class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white text-center drop-shadow-2xl shimmer-text animate-popUp">
+    Happy 21st Birthday
+  </h1>
+  <h2 class="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mt-4 text-center shimmer-text animate-popUp delay-200">
+    Niña Danica Verdejo
+  </h2>
+  <p class="mt-4 sm:mt-6 text-white text-lg md:text-xl max-w-xl text-center drop-shadow-md animate-popUp delay-400">
+    Celebrating the most amazing person in my life. You are beautiful, brilliant, and loved more than words can express. ✨
+  </p>
+</section>
+
+<!-- Custom Animations -->
+<style>
+  /* Pop-up Animation for Text */
+  @keyframes popUp {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .animate-popUp {
+    animation: popUp 1s ease-out forwards;
+  }
+  .animate-popUp.delay-200 { animation-delay: 0.2s; }
+  .animate-popUp.delay-400 { animation-delay: 0.4s; }
+
+  /* Floating stars / sparkle animation */
+  @keyframes pulseStar {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  .animate-pulseStar {
+    animation: pulseStar 2s ease-in-out infinite;
+  }
+</style>
+
+
+<!-- Gallery Page -->
+<section id="gallery" class="py-20 px-6 bg-white/30 mt-20">
+  <h3 class="font-display text-4xl text-center mb-2">Our Memories</h3>
+  <h5 class="font-display text-2xl text-center mb-6">Tap the 6 Pictures</h5>
+
+  <!-- Grid of images -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+    <!-- Gallery Card 1 -->
+    <div class="gallery-card relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:scale-105 transition transform group">
+      <img class="w-full aspect-square object-cover hover:rotate-2 hover-glow transition-transform duration-500"
+           src="nina/123.jpg"
+           data-message="Wow, this selfie of you is amazing. Your eyes, your smile, the way your hair falls everything looks so natural and beautiful. I feel lucky to know someone like you. Even a simple photo of you feels perfect. 💖✨" />
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+        <span class="text-white text-lg font-semibold tracking-wide">Tap to view</span>
+      </div>
+    </div>
+
+    <!-- Gallery Card 2 -->
+    <div class="gallery-card relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:scale-105 transition transform group">
+      <img class="w-full aspect-square object-cover hover:-rotate-2 hover-glow transition-transform duration-500"
+           src="nina/1234.jpg"
+           data-message="Your smile here is so warm and bright. It makes everything around you happier. I could look at this photo for hours and still feel that joy you give off. 😄❤️" />
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+        <span class="text-white text-lg font-semibold tracking-wide">Tap to view</span>
+      </div>
+    </div>
+
+    <!-- Gallery Card 3 -->
+    <div class="gallery-card relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:scale-105 transition transform group">
+      <img class="w-full aspect-square object-cover hover:rotate-1 hover-glow transition-transform duration-500"
+           src="nina/1233.jpg"
+           data-message="I love this pose! You look charming, confident, and adorable. Your eyes and smile make me so happy. 😍✨" />
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+        <span class="text-white text-lg font-semibold tracking-wide">Tap to view</span>
+      </div>
+    </div>
+
+    <!-- Gallery Card 4 -->
+    <div class="gallery-card relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:scale-105 transition transform group">
+      <img class="w-full aspect-square object-cover hover:-rotate-1 hover-glow transition-transform duration-500"
+           src="nina/12344.jpg"
+           data-message="Just wow! This outfit is perfect on you so elegant, confident, and beautiful. 💖✨" />
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+        <span class="text-white text-lg font-semibold tracking-wide">Tap to view</span>
+      </div>
+    </div>
+
+    <!-- Gallery Card 5 -->
+    <div class="gallery-card relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:scale-105 transition transform group">
+      <img class="w-full aspect-square object-cover hover:rotate-3 hover-glow transition-transform duration-500"
+           src="nina/123455.jpg"
+           data-message="Your aura in this picture is wonderful. You radiate happiness and energy. Every little detail, even your laughter, makes this photo so special. 🌸😄" />
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+        <span class="text-white text-lg font-semibold tracking-wide">Tap to view</span>
+      </div>
+    </div>
+
+    <!-- Gallery Card 6 -->
+    <div class="gallery-card relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:scale-105 transition transform group">
+      <img class="w-full aspect-square object-cover hover:-rotate-3 hover-glow transition-transform duration-500"
+           src="nina/1234566.jpg"
+           data-message="So fresh and elegant! Your confidence shines, making this picture unforgettable. ✨💛" />
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+        <span class="text-white text-lg font-semibold tracking-wide">Tap to view</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal for full image -->
+  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
+    <div class="bg-white rounded-3xl shadow-xl w-full max-w-3xl flex flex-col md:flex-row overflow-hidden relative">
+      <button id="closeModal" class="absolute top-3 right-3 text-black font-bold text-3xl hover:text-red-500 transition">&times;</button>
+      <div class="w-full md:w-1/2 flex items-center justify-center bg-black/5">
+        <img id="modalImage" class="w-full h-auto max-h-[80vh] object-contain" src="" alt="Gallery Image" />
+      </div>
+      <div class="w-full md:w-1/2 p-6 flex items-center bg-blue-50">
+        <p id="modalMessage" class="text-blue-700 text-lg leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Optional Tailwind hover glow -->
+<style>
+  .hover-glow:hover {
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(0,0,0,0.3));
+  }
+</style>
+
+<script>
+  // Gallery Modal JS
+  const modal = document.getElementById('modal');
+  const modalImage = document.getElementById('modalImage');
+  const modalMessage = document.getElementById('modalMessage');
+  const closeModal = document.getElementById('closeModal');
+  const images = document.querySelectorAll('#gallery .gallery-card img');
+
+  function openModal(index){
+    modalImage.src = images[index].src;
+    modalMessage.textContent = images[index].dataset.message;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  images.forEach((img, i) => {
+    img.addEventListener('click', () => openModal(i));
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+</script>
+
+
+<!-- Video Memories Page -->
+<section id="video" class="py-20 px-6 bg-white/40">
+  <h3 class="font-display text-4xl text-center mb-12 ">Video Memories</h3>
+
+  <!-- Swiper container -->
+  <div class="max-w-4xl mx-auto">
+    <div class="swiper videoSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">Photo Booth Date 💖</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid2.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">U.P DATE 💃</p>
+        </div>
+
+         <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid3.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">DATE</p>
+        </div>
+        
+          <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid4.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">DATE</p>
+        </div>
+
+          <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid5.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">DATE</p>
+        </div>
+
+          <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid6.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">DATE</p>
+        </div>
+
+
+        <!-- Add more slides here -->
+        <!-- Example:
+        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg">
+          <video controls class="w-full h-56 object-contain bg-black rounded-t-2xl">
+            <source src="video/vid3.mp4" type="video/mp4">
+          </video>
+          <p class="p-4 text-blue-700 text-center font-medium">Another memory</p>
+        </div>
+        -->
+
+      </div>
+
+      <!-- Swiper navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Swiper pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS & CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".videoSwiper", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    spaceBetween: 20,
+    slidesPerView: 1, // 1 slide per view, change to 2 or 3 for bigger screens if needed
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 2 },
+    },
+  });
+</script>
+
+
+<!-- Love Letter Page - Landscape Layout Compact Version -->
+<section id="letter" class="py-12 bg-white/10 px-6">
+  <div class="max-w-6xl mx-auto bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 rounded-3xl p-6 shadow-2xl flex flex-col md:flex-row items-center gap-10 backdrop-blur-md animate-fadeUp">
+    
+    <!-- Letter Content -->
+    <div class="flex-1 text-center md:text-left">
+      <span class="text-5xl drop-shadow-xl mb-3 inline-block">💌</span>
+      <h3 class="font-display text-4xl my-3 shimmer-text text-white">A Letter For You</h3>
+      
+   <p class="text-white text-base leading-relaxed whitespace-pre-line drop-shadow-md">
+  My love,  
+
+  Happy 21st! I can’t believe how fast time flies.  
+  You make me so happy every day, and I’m really lucky to have you.  
+
+  Every moment with you feels so special.  
+  Your laugh, your smile, the way you are it just makes everything better.  
+
+  I hope your day is full of happiness, fun, and all the love you deserve.  
+  I want us to keep making memories together, side by side, always.  
+
+  Happy Birthday, my love. 💕
+</p>
+
+<p class="mt-4 font-display text-blue-100 text-lg">
+  Always yours,  
+  <br>
+  Your loving soulmate ❤️
+</p>
+
+    </div>
+
+    <!-- Decorative Side (Example Photo) -->
+    <div class="flex-1 flex justify-center md:justify-end">
+      <img src="nina/pic.jpg" 
+           alt="Picture" 
+           class="rounded-2xl shadow-2xl w-full max-w-sm animate-float object-cover" />
+    </div>
+
+  </div>
+</section>
+
+<!-- Optional Tailwind Animation for floating effect -->
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+</style>
+
+<!-- Birthday Wishes Page -->
+<section id="wishes" class="py-20 px-6 bg-blue-50">
+  <h3 class="font-display text-4xl text-center mb-10">Birthday Wishes</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto" id="wishList">
+    <div class="p-6 bg-blue1 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform"> Hope all your wishes come true</div>
+    <div class="p-6 bg-blue2 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform"> Wishing you lots of happiness</div>
+    <div class="p-6 bg-blue1 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform"> Hope you have lots of fun today</div>
+    <div class="p-6 bg-blue2 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform hover:scale-105">Wishing you love all around you</div>
+    <div class="p-6 bg-blue1 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform"> May your day be full of smiles and laughter</div>
+    <div class="p-6 bg-blue2 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform"> Hope today is as special as you are</div>
+    <div class="p-6 bg-blue1 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform"> Wishing you fun moments with friends and family</div>
+    <div class="p-6 bg-blue2 text-white rounded-2xl shadow text-center hover:shadow-2xl transition transform hover:scale-105"> Hope every day brings you joy and love</div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-blue-600">
+    <p class="font-display text-2xl  drop-shadow-lg">Happy 21st Birthday My Love 🎂</p>
+    <p class="text-sm">Made with ♥ just for you</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+   // NEW SOUND SYSTEM
+const toggleSoundBtn = document.getElementById('toggleSound');
+const bgMusic = document.getElementById('bgMusic');
+let soundOn = false;
+
+// Toggle background music
+toggleSoundBtn.addEventListener('click', () => {
+  soundOn = !soundOn;
+  if(soundOn){
+    bgMusic.play().catch(err => console.log('Audio play blocked', err));
+    toggleSoundBtn.textContent = '🔊 Sound On';
+  } else {
+    bgMusic.pause();
+    toggleSoundBtn.textContent = '🔇 Sound Off';
+  }
+});
+
+// Play click sound
+function playClickSound(){
+  if(soundOn){
+    const clickSound = new Audio('https://www.soundjay.com/button/beep-07.mp3');
+    clickSound.volume = 0.5;
+    clickSound.play().catch(err => console.log('Click blocked', err));
+  }
+}
+
+// Optional birthday/pop sounds
+function playBirthdayCheer(){
+  if(soundOn){
+    const cheer = new Audio('https://www.soundjay.com/human/applause-08.mp3');
+    cheer.volume = 0.5;
+    cheer.play().catch(err => console.log('Cheer blocked', err));
+  }
+}
+
+function playPartyPop(){
+  if(soundOn){
+    const pop = new Audio('https://www.soundjay.com/button/sounds/button-16.mp3');
+    pop.volume = 0.5;
+    pop.play().catch(err => console.log('Pop blocked', err));
+  }
+}
+
+    // Floating Hearts
+    const heartContainer = document.getElementById('hearts');
+    for(let i=0;i<50;i++){
+      const heart = document.createElement('div');
+      heart.innerText='♥';
+      heart.className='absolute text-blue-200 text-opacity-80 animate-float';
+      heart.style.left=Math.random()*100+'%';
+      heart.style.fontSize=14+Math.random()*30+'px';
+      heart.style.animationDuration=4+Math.random()*6+'s';
+      heart.style.animationDelay=Math.random()*5+'s';
+      heartContainer.appendChild(heart);
+      heart.addEventListener('click', playClickSound);
+    }
+
+    // Confetti
+    const confettiContainer=document.getElementById('confetti');
+    const colors=['#3b82f6','#60a5fa','#93c5fd','#bfdbfe','#1e40af'];
+    for(let i=0;i<100;i++){
+      const c=document.createElement('div');
+      c.className='absolute w-2 h-2 rounded-full animate-confetti';
+      c.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+      c.style.left=Math.random()*100+'%';
+      c.style.top=Math.random()*-50+'vh';
+      c.style.width=5+Math.random()*10+'px';
+      c.style.height=5+Math.random()*10+'px';
+      c.style.animationDuration=5+Math.random()*5+'s';
+      c.style.animationDelay=Math.random()*5+'s';
+      confettiContainer.appendChild(c);
+    }
+
+    // Bokeh
+    const canvas=document.getElementById('bokehCanvas');
+    const ctx=canvas.getContext('2d');
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    const particles=[];
+    for(let i=0;i<50;i++){
+      particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*4+2,alpha:Math.random()*0.5+0.2,dx:(Math.random()-0.5)*0.2,dy:(Math.random()-0.5)*0.2});
+    }
+    function animateBokeh(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,255,255,${p.alpha})`;
+        ctx.fill();
+        p.x+=p.dx; p.y+=p.dy;
+        if(p.x<0)p.x=canvas.width;
+        if(p.x>canvas.width)p.x=0;
+        if(p.y<0)p.y=canvas.height;
+        if(p.y>canvas.height)p.y=0;
+      });
+      requestAnimationFrame(animateBokeh);
+    }
+    animateBokeh();
+
+    // Gallery Modal
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modalMessage');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+    const images = document.querySelectorAll('#gallery img');
+
+    function openModal(index){
+      modalMessage.textContent = images[index].dataset.message;
+      modalImage.src = images[index].src;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      playClickSound();
+    }
+
+    images.forEach((img, i) => {
+      img.addEventListener('click', () => openModal(i));
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      playClickSound();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+
+    // Wishes board
+    const postWishBtn = document.getElementById('postWish');
+    const wishInput = document.getElementById('wishInput');
+    const wishList = document.getElementById('wishList');
+
+    postWishBtn.addEventListener('click', () => {
+      const text = wishInput.value.trim();
+      if(text){
+        const div = document.createElement('div');
+        div.className = 'p-4 bg-blue1 text-white rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105';
+        div.textContent = text;
+        wishList.prepend(div);
+        wishInput.value = '';
+        playClickSound();
+      }
+    });
+  </script>
+
+</body>
+</html>
